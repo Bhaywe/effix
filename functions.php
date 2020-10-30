@@ -2,11 +2,9 @@
 
 function wpb_custom_new_menu()
 {
-    register_nav_menu('my-custom-menu', __('My Custom Menu'));
+    register_nav_menu('main_nav', __('My Custom Menu'));
 }
 add_action('init', 'wpb_custom_new_menu');
-
-
 
 
 add_action('after_setup_theme', 'vluxe_supports');
@@ -34,14 +32,4 @@ function vluxe_supports()
             'navigation-widgets'
         ]
     );
-}
-
-
-//nav_menu_submenu_css_class
-add_filter('nav_menu_css_class', 'vluxe_menu_class', 10, 4);
-function vluxe_menu_class($classes)
-{
-    unset($classes);
-    $classes[] = 'nav__menu--item';
-    return $classes;
 }
