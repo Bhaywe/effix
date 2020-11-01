@@ -8,6 +8,7 @@ function effix_supports()
      add_theme_support('post-thumbnails');
      add_theme_support('menus');
      register_nav_menu('main_nav', 'Navigation');
+     register_nav_menu('login_nav', 'Login');
 
      add_theme_support(
           'html5',
@@ -26,10 +27,10 @@ function effix_supports()
 
 //nav_menu_submenu_css_class
 add_filter('nav_menu_css_class', 'effix_menu_class', 10, 4);
-function vluxe_menu_class($classes)
+function effix_menu_class($classes)
 {
      unset($classes);
-     $classes[] = 'nav__menu--item center';
+     $classes[] = 'main-nav__menu--item center';
      return $classes;
 }
 

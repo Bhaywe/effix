@@ -10,6 +10,28 @@
 <body>
 
      <header class="header">
-          Header
+          <div class="flex header__box">
+               <div class="header__logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-effix.png" alt="Logo Effix">
+               </div>
+               <nav class="main-nav u-margin-bottom-big container" id="nav-menu">
+                    <?php wp_nav_menu(
+                         array(
+                              'theme_location' => 'main_nav',
+                              'container' => 'ul',
+                              'menu_class' => 'main-nav__menu container-big flex'
+                         )
+                    ); ?>
+               </nav>
+               <nav class="login-nav" id="login-menu">
+                    <?php wp_nav_menu(
+                         array(
+                              'theme_location' => 'login_nav',
+                              'container' => 'ul',
+                              'menu_class' => 'login-nav__menu flex'
+                         )
+                    ); ?>
+               </nav>
+          </div>
      </header>
      <main>

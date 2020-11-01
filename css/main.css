@@ -20,4 +20,89 @@ body {
 a {
   text-decoration: none;
 }
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.container-big {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .container-big {
+    width: 100%;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.gradient {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(70%, #fff), to(#00609D));
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 70%, #00609D 100%);
+}
+
+.u-margin-top-big {
+  margin-top: 6rem;
+}
+
+.u-margin-top-normal {
+  margin-top: 2.4rem;
+}
+
+.u-margin-top-small {
+  margin-top: 1.8rem;
+}
+
+.u-margin-top-xsmall {
+  margin-top: 1.2rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 6rem;
+}
+
+.u-margin-bottom-normal {
+  margin-bottom: 2.4rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.8rem;
+}
+
+.u-margin-bottom-xsmall {
+  margin-bottom: 1.2rem;
+}
+
+.u-padding-bottom-normal {
+  padding-bottom: 2.4rem;
+}
+
+.u-padding-bottom-big {
+  padding-bottom: 6rem;
+}
+
+.u-padding-top-big {
+  padding-top: 5rem;
+}
 /*# sourceMappingURL=main.css.map */
