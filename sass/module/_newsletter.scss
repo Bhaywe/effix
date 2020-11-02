@@ -1,6 +1,10 @@
 .newsletter {
      height: 40rem;
 
+     h2 {
+          text-align: center;
+     }
+
      &__form {
           input {
                margin-right: 3rem;

@@ -1,0 +1,29 @@
+.about {
+
+     &__content {
+          width: 60%;
+     }
+}
+
+.team {
+
+     &__items {
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          &--box {
+               width: 30%;
+               margin-bottom: 7rem;
+               padding: 3rem;
+               border-radius: 3px;
+               border: 1px solid $color-secondary;
+
+               img {
+                    width: 15rem;
+                    height: 15rem;
+                    border-radius: 3px;
+                    border: 1px solid $color-secondary;
+               }
+          }
+     }
+}

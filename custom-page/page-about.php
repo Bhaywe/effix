@@ -5,10 +5,5 @@
  *
  */
 get_header();
-?>
-
-À propos
-
-<?php
+get_template_part('template-parts/about');
 get_footer();
-?>

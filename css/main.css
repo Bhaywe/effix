@@ -37,6 +37,10 @@ a {
   background-color: rgba(38, 70, 181, 0.8);
 }
 
+.btn--big {
+  padding: 2rem 4rem;
+}
+
 .form__input {
   padding: 1rem 1.5rem;
   width: 70rem;
@@ -87,10 +91,21 @@ a {
   text-decoration: none;
 }
 
+.heading-primary {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+}
+
 .heading-secondary {
   font-weight: 500;
   font-size: 3rem;
-  text-align: center;
+  line-height: 3.6rem;
+}
+
+.heading-secondary--dark {
+  color: #393F55;
+  text-align: inherit;
 }
 
 .container {
@@ -134,7 +149,7 @@ a {
 }
 
 .u-margin-top-small {
-  margin-top: 1.8rem;
+  margin-top: 2rem;
 }
 
 .u-margin-top-xsmall {
@@ -142,31 +157,43 @@ a {
 }
 
 .u-margin-bottom-big {
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
+}
+
+.u-margin-bottom-mid {
+  margin-bottom: 8rem;
 }
 
 .u-margin-bottom-normal {
-  margin-bottom: 2.4rem;
+  margin-bottom: 6rem;
 }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .u-margin-bottom-xsmall {
   margin-bottom: 1.2rem;
 }
 
-.u-padding-bottom-normal {
-  padding-bottom: 2.4rem;
+.u-padding-bottom-big {
+  padding-bottom: 10rem;
 }
 
-.u-padding-bottom-big {
+.u-padding-bottom-normal {
   padding-bottom: 6rem;
+}
+
+.u-padding-bottom-small {
+  padding-bottom: 2rem;
 }
 
 .u-padding-top-big {
   padding-top: 10rem;
+}
+
+.u-padding-top-small {
+  padding-top: 2rem;
 }
 
 .footer {
@@ -341,8 +368,45 @@ a {
   background-color: rgba(38, 70, 181, 0.5);
 }
 
+.accueil {
+  height: 82rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__content {
+  width: 60%;
+}
+
+.team__items {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.team__items--box {
+  width: 30%;
+  margin-bottom: 7rem;
+  padding: 3rem;
+  border-radius: 3px;
+  border: 1px solid #999DAC;
+}
+
+.team__items--box img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 3px;
+}
+
 .newsletter {
   height: 40rem;
+}
+
+.newsletter h2 {
+  text-align: center;
 }
 
 .newsletter__form input {

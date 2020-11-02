@@ -12,4 +12,8 @@
      &:hover {
           background-color: rgba($color-primary, .8);
      }
+
+     &--big {
+          padding: 2rem 4rem;
+     }
 }
