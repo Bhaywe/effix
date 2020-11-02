@@ -7,8 +7,8 @@ function wpb_custom_new_menu()
 add_action('init', 'wpb_custom_new_menu');
 
 
-add_action('after_setup_theme', 'vluxe_supports');
-function vluxe_supports()
+add_action('after_setup_theme', 'effix_supports');
+function effix_supports()
 {
     add_theme_support('automatic-feed-links');
     add_theme_support('title-tag');
@@ -32,4 +32,30 @@ function vluxe_supports()
             'navigation-widgets'
         ]
     );
+}
+
+
+/**
+ * Ajout du rôle abonné à l'achat de l'Abonnement
+ */
+add_action('woocommerce_order_status_processing', 'change_role_on_purchase');
+function change_role_on_purchase($order_id)
+{
+
+    $order = new WC_Order($order_id);
+    $items = $order->get_items();
+
+    foreach ($items as $item) {
+        $product_name = $item['name'];
+        $product_id = $item['product_id'];
+        $product_variation_id = $item['variation_id'];
+
+        if ($order->user_id > 0 && $product_id == '12') {
+            update_user_meta($order->user_id, 'paying_customer', 1);
+            $user = new WP_User($order->user_id);
+
+            // Add role
+            $user->add_role('subscriber');
+        }
+    }
 }
