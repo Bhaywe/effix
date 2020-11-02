@@ -5,10 +5,5 @@
  *
  */
 get_header();
-?>
-
-Abonnement
-
-<?php
+get_template_part('template-parts/abonnement');
 get_footer();
-?>

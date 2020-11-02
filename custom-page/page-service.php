@@ -1,14 +1,8 @@
 <?php
-
 /**
  * Template Name: Service
  *
  */
 get_header();
-?>
-
-Service
-
-<?php
+get_template_part('template-parts/service');
 get_footer();
-?>
