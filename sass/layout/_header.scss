@@ -1,3 +1,117 @@
 .header {
-     
+     height: 20rem;
+
+     ul {
+          list-style: none;
+     }
+
+     &__box {
+          height: 100%;
+          align-items: center;
+          justify-content: space-between;
+     }
+
+     &__logo {
+          width: 10%;
+
+          img {
+               width: 9rem;
+          }
+     }
+
+     &__nav {
+          width: 75%;
+          align-items: center;
+          justify-content: space-between;
+     }
+}
+
+.main-nav {
+     width: 55%;
+
+     &__menu {
+          justify-content: space-evenly;
+
+          li {
+               margin-right: 3%;
+
+               a {
+                    color: $color-secondary-dark;
+                    transition: all .4s;
+          
+                    &:hover {
+                         color: rgba($color-primary, .8);
+                    }
+          
+                    &::after {
+                         content: '';
+                         width: 0px;
+                         height: 1px;
+                         display: block;
+                         background-color: rgba($color-primary, 0);
+                         transition: all .4s;
+                    }
+          
+                    &:hover::after {
+                         width: 100%;
+                         background-color: rgba($color-primary, .5);
+                    }
+               }
+          }
+     }
+}
+
+.login-nav {
+     width: 45%;
+
+     &__menu {
+          justify-content: flex-end;
+
+          li:nth-child(odd) {
+               background-color: $color-primary;
+               border-radius: $b-radius;
+               transition: all .4s;
+               margin-right: 2.5rem;
+               padding: 1rem 3rem;
+               cursor: pointer;
+               
+               a {
+                    color: $color-white;
+                    
+               }
+
+               &:hover {
+                    background: rgba($color-primary, .8);
+               }
+          }
+
+          li:nth-child(even) {
+               padding: 1rem 2.5rem;
+               border: 1px solid $color-primary;
+               border-radius: $b-radius;
+               
+               a {
+                    color: $color-primary;
+                    transition: all .4s;
+
+                    &:hover {
+                         color: rgba($color-primary, .8);
+                    }
+          
+                    &::after {
+                         content: '';
+                         width: 0px;
+                         height: 1px;
+                         display: block;
+                         background-color: rgba($color-primary, 0);
+                         transition: all .4s;
+                    }
+          
+                    &:hover::after {
+                         width: 100%;
+                         background-color: rgba($color-primary, .5);
+                    }
+               }
+          }
+     }
 }

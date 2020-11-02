@@ -1,28 +1,23 @@
 // Colors
 
-$color-primary: #004673;
-$color-primary-light: #00609D;
+$color-primary: #2646B5;
 
-$color-blue: #4AABE8;
+$color-secondary: #999DAC;
+$color-secondary-dark: #393F55;
+$color-secondary-light: #D9D9DB;
 
-$color-background: #EFF2FE;
-$color-background-dark: #E3E6EC;
-
-$color-secondary: #39384F;
-$color-secondary-dark: #07043A;
-
-$color-white: #fff;
-$color-black: #000;
+$color-white: #F5F5F6;
+$color-black: #14161D;
 
 $color-transparent: transparent;
 
 //Fonts
 
-$default-size: 1.8rem; //18px
+$default-size: 1.6rem; //16px
 $small-size: 1.4rem;
 $xsmall-size: 1.2rem;
-$text-font: 'Red Hat Text', sans-serif;
+$text-font: 'Inter', sans-serif;
 
 //Border-radius
 
-$b-radius: 3px;
+$b-radius: 2px;

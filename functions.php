@@ -1,5 +1,12 @@
 <?php
 
+add_action('wp_enqueue_scripts', 'enqueue_styles_effix');
+function enqueue_styles_effix()
+{
+     wp_enqueue_style('style-principal', get_template_directory_uri() . '/css/main.css');
+     wp_enqueue_style('style-effix', get_template_directory_uri() . '/style.css');
+}
+
 add_action('after_setup_theme', 'effix_supports');
 function effix_supports()
 {
@@ -26,16 +33,10 @@ function effix_supports()
 }
 
 //nav_menu_submenu_css_class
-add_filter('nav_menu_css_class', 'effix_menu_class', 10, 4);
-function effix_menu_class($classes)
-{
-     unset($classes);
-     $classes[] = 'main-nav__menu--item center';
-     return $classes;
-}
-
-add_action('wp_enqueue_scripts', 'enqueue_styles_effix');
-function enqueue_styles_crm()
-{
-     wp_enqueue_style('style-style', get_template_directory_uri() . '/css/style.css');
-}
+// add_filter('nav_menu_css_class', 'effix_menu_class', 10, 4);
+// function effix_menu_class($classes)
+// {
+//      unset($classes);
+//      $classes[] = 'main-nav__menu--item center';
+//      return $classes;
+// }
