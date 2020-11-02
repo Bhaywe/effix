@@ -1,0 +1,19 @@
+.form {
+
+     &__input {
+          padding: 1rem 1.5rem;
+          width: 70rem;
+          border-radius: $b-radius;
+          color: $color-primary;
+          border: 1px solid $color-secondary;
+
+               
+          &:focus {
+               outline: none;
+               border: 1px solid $color-primary;
+          }
+          &::placeholder {
+               color: $color-secondary;
+          }
+     }
+}

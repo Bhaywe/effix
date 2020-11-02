@@ -1,0 +1,15 @@
+@import "./variables";
+
+.btn {
+     border: $color-transparent;
+     border-radius: $b-radius;
+     background-color: $color-primary;
+     color: $color-white;
+     padding: 1rem 3rem;
+     cursor: pointer;
+     transition: all .4s;
+
+     &:hover {
+          background-color: rgba($color-primary, .8);
+     }
+}

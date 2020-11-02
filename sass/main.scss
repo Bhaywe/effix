@@ -1,18 +1,19 @@
 @import "./base/base";
-// @import "./base/buttons";
+@import "./base/buttons";
+@import "./base/form";
 @import "./base/mixins";
 @import "./base/typography";
 @import "./base/_utilities";
 @import "./base/variables";
 
-// @import "./layout/footer";
+@import "./layout/footer";
 @import "./layout/header";
 
 // @import "./module/accueil";
 // @import "./module/avantage";
 // @import "./module/blog";
 // @import "./module/demo";
-// @import "./module/documentation";
+@import "./module/newsletter.scss";
 // @import "./module/main";
 // @import "./module/presentation";
 // @import "./module/single";

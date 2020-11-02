@@ -1,5 +1,5 @@
 .container { 
-     width: 75%;
+     width: 65%;
      margin: 0 auto;
 
      @include  responsive(desktop) { 
@@ -21,8 +21,8 @@
 .center {text-align: center;}
 
 
-.u-margin-top-big {margin-top: 6rem;}
-.u-margin-top-normal {margin-top: 2.4rem;}
+.u-margin-top-big {margin-top: 10rem;}
+.u-margin-top-normal {margin-top: 6rem;}
 .u-margin-top-small {margin-top: 1.8rem}
 .u-margin-top-xsmall {margin-top: 1.2rem}
 
@@ -34,4 +34,4 @@
 .u-padding-bottom-normal {padding-bottom: 2.4rem;}
 .u-padding-bottom-big {padding-bottom: 6rem;}
 
-.u-padding-top-big {padding-top: 5rem;}
+.u-padding-top-big {padding-top: 10rem;}
