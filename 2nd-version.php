@@ -109,6 +109,3 @@ function update_subscription_effix()
         }
     }
 }
-
-
-// ajout du status terminé
