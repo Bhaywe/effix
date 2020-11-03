@@ -7,7 +7,7 @@
           <div class="footer__logo">
                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-forme.png" alt="Logo Effix">
           </div>
-          <a href="#">Contact</a>
+          <a href="<?php echo the_permalink(9); ?>">Contact</a>
      </div>
 </footer>
 

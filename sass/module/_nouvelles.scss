@@ -43,7 +43,23 @@
           &--thumb {
                height: 30vh;
                width: 100%;
-               background: red;
           }
      }
+}
+
+.single {
+
+     &__thumb {
+          width: 60%;
+          height: 60vh;
+     }
+
+     &__content {
+          width: 60%;
+
+          p {
+               margin-bottom: 2rem;
+          }
+     }
+
 }

@@ -5,10 +5,5 @@
  *
  */
 get_header();
-?>
-
-Contact
-
-<?php
+get_template_part('template-parts/contact');
 get_footer();
-?>

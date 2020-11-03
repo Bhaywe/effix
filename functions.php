@@ -31,3 +31,12 @@ function effix_supports()
           ]
      );
 }
+
+add_action('widgets_init', 'contact_form');
+function contact_form()
+{
+     register_sidebar(array(
+          'name' => 'Formulaire de contact',
+          'id' => 'contact-form',
+     ));
+}

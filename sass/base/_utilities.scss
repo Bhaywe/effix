@@ -16,6 +16,15 @@
      }  
 }
 
+.container-small {
+     width: 50%;
+     margin: 0 auto;
+
+     @include  responsive(tablet) { 
+          width: 100%;
+     }  
+}
+
 .flex { display: flex;}
 
 .center {text-align: center;}

@@ -70,6 +70,68 @@ a {
   color: #999DAC;
 }
 
+.contact-form {
+  margin-bottom: 4rem !important;
+}
+
+.contact-form label {
+  font-family: "Inter", sans-serif;
+  color: #393F55;
+  font-weight: 500 !important;
+  margin-bottom: 1.6rem !important;
+}
+
+.contact-input, .contact-textarea {
+  margin-top: 1.5rem;
+  font-family: "Inter", sans-serif;
+  padding: 1rem 1.5rem;
+  width: 50rem !important;
+  border-radius: 2px;
+  border: 1px solid #999DAC;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.contact-input:focus, .contact-textarea:focus {
+  outline: none;
+  border: 1px solid #2646B5;
+  color: #2646B5;
+}
+
+.contact-input::-webkit-input-placeholder, .contact-textarea::-webkit-input-placeholder {
+  color: #999DAC;
+}
+
+.contact-input:-ms-input-placeholder, .contact-textarea:-ms-input-placeholder {
+  color: #999DAC;
+}
+
+.contact-input::-ms-input-placeholder, .contact-textarea::-ms-input-placeholder {
+  color: #999DAC;
+}
+
+.contact-input::placeholder, .contact-textarea::placeholder {
+  color: #999DAC;
+}
+
+.contact-textarea {
+  width: 100% !important;
+  height: 30vh !important;
+  resize: none;
+}
+
+.ninja-forms-req-symbol, .nf-form-fields-required {
+  display: none;
+}
+
+#text-2::marker {
+  color: transparent;
+}
+
+.contact-btn {
+  text-align: right;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
@@ -142,6 +204,17 @@ a {
 
 @media (max-width: 900px) {
   .container-big {
+    width: 100%;
+  }
+}
+
+.container-small {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .container-small {
     width: 100%;
   }
 }
@@ -399,13 +472,6 @@ a {
   border: 1px solid #999DAC;
 }
 
-.accueil {
-  height: 82rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .about__content {
   width: 60%;
 }
@@ -431,6 +497,13 @@ a {
   height: 15rem;
   border-radius: 3px;
   border: 1px solid #999DAC;
+}
+
+.accueil {
+  height: 82rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .newsletter {
@@ -495,7 +568,19 @@ a {
 .nouvelles__box--thumb {
   height: 30vh;
   width: 100%;
-  background: red;
+}
+
+.single__thumb {
+  width: 60%;
+  height: 60vh;
+}
+
+.single__content {
+  width: 60%;
+}
+
+.single__content p {
+  margin-bottom: 2rem;
 }
 
 .service__content {
