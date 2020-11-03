@@ -40,3 +40,15 @@ function contact_form()
           'id' => 'contact-form',
      ));
 }
+
+function woocommerce_menu()
+{
+     $menu = [
+          'dashboard'              => __('Compte', 'woocommerce'),
+          'orders'                 => __('Commandes', 'woocommerce'),
+          'edit-account'           => __('Détails du compte', 'woocommerce'),
+     ];
+     return $menu;
+}
+
+add_filter('woocommerce_account_menu_items', 'woocommerce_menu');
