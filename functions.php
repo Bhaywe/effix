@@ -75,20 +75,19 @@ function update_subscription_effix()
         //--------------- testing date --------------------
 
 
-        echo "ID de la commande " . $order->get_id() . '<br><br>';
+        // echo "ID de la commande " . $order->get_id() . '<br><br>';
 
-        echo "Date de creation" . $order->order_date . '<br><br>';
+        // echo "Date de creation" . $order->order_date . '<br><br>';
 
-        echo "date d'expiration" . $expirationDate . '<br><br>';
+        // echo "date d'expiration" . $expirationDate . '<br><br>';
 
-        echo "current time" . date('Y-m-d H:i:s', strtotime('+5 minutes', current_time('timestamp'))) . '<br><br>';
+        // echo "current time" . date('Y-m-d H:i:s', strtotime('+1 year', current_time('timestamp'))) . '<br><br>';
 
-        echo "<hr>";
+        // echo "<hr>";
 
 
         //-------------------------------------------------
         //--------------- testing date --------------------
-
 
         //Id du client de la commande
         $order_customer_id  = $order->get_customer_id();
@@ -100,11 +99,10 @@ function update_subscription_effix()
         $timestampConvert = strtotime($created_date);
 
         //Ajout un an à la date d'achat du produit
-        $expirationDate = date('Y-m-d g:i:s', strtotime('+5 minutes', $timestampConvert));
+        $expirationDate = date('Y-m-d g:i:s', strtotime('+1 year', $timestampConvert));
 
         //Conversion de la date d'expiration en Unix timestamp
         $expirationTime = strtotime($expirationDate);
-
 
         //-------------------------------------------------
         //obtenir l'id de la commande
@@ -120,11 +118,14 @@ function update_subscription_effix()
         }
         //-------------------------------------------------
 
-
-
         //Vérification de la date actuelle avec la date d'expiration
-        if ($product_id === 10 && current_time('timestamp') >= $expirationTime) {
+        if ($product_id === 10 && current_time('timestamp') <= $expirationTime) {
+            // Fetch the WP_User object of our user.
+            $get_customer_id = new WP_User($order_customer_id);
 
+            // Replace the current role with 'customer'
+            $get_customer_id->set_role('subscriber');
+        } else {
             // Fetch the WP_User object of our user.
             $get_customer_id = new WP_User($order_customer_id);
 
