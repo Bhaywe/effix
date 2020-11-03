@@ -48,7 +48,7 @@ function change_role_on_purchase($order_id)
         $product_id = $item['product_id'];
         $product_variation_id = $item['variation_id'];
 
-        if ($order->user_id > 0 && $product_id == '12') {
+        if ($order->user_id > 0 && $product_id == '10') {
             update_user_meta($order->user_id, 'paying_customer', 1);
             $user = new WP_User($order->user_id);
 
@@ -79,7 +79,7 @@ function update_subscription_effix()
         $timestampConvert = strtotime($created_date);
 
         //Ajout un an à la date d'achat du produit
-        $expirationDate = date('Y-m-d', strtotime('+10 minutes', $timestampConvert));
+        $expirationDate = date('Y-m-d', strtotime('+5 minutes', $timestampConvert));
 
         //Conversion de la date d'expiration en Unix timestamp
         $expirationTime = strtotime($expirationDate);
@@ -96,7 +96,7 @@ function update_subscription_effix()
         }
 
         //Vérification de la date actuelle avec la date d'expiration
-        if ($product_id === 12 && current_time('timestamp') >= $expirationTime) {
+        if ($product_id === 10 && current_time('timestamp') >= $expirationTime) {
 
             // Fetch the WP_User object of our user.
             $get_customer_id = new WP_User($order_customer_id);
