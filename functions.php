@@ -132,5 +132,17 @@ function update_subscription_effix()
             // Replace the current role with 'customer'
             $get_customer_id->set_role('customer');
         }
+
+
+
+        // lorsque le current time arrive à 1 semaine de l'Expriration on
+        // envoie un courriel de rapel de l'Expiration de l'abonnement.
+        // $to = 'sendto@example.com';
+        // $subject = 'The subject';
+        // $body = 'The email body content';
+        // $headers = array('Content-Type: text/html; charset=UTF-8');
+        // wp_mail( $to, $subject, $body, $headers );
+
+
     }
 }
