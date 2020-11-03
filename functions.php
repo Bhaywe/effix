@@ -103,12 +103,6 @@ function update_subscription_effix()
 
             // Replace the current role with 'customer'
             $get_customer_id->set_role('customer');
-
-            //à revoir pour p-e garder l'historique.
-            // wp_delete_post($order_id, true); //delete order after expiration
         }
     }
 }
-
-
-// ajout du status terminé
