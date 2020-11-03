@@ -48,7 +48,7 @@ function change_role_on_purchase($order_id)
         $product_id = $item['product_id'];
         $product_variation_id = $item['variation_id'];
 
-        if ($order->user_id > 0 && $product_id == '12') {
+        if ($order->user_id > 0 && $product_id == '10') {
             update_user_meta($order->user_id, 'paying_customer', 1);
             $user = new WP_User($order->user_id);
 
@@ -69,21 +69,45 @@ function update_subscription_effix()
     $orders = wc_get_orders(array('numberposts' => -1));
 
     foreach ($orders as $order) {
+
+
+        //-------------------------------------------------
+        //--------------- testing date --------------------
+
+
+        echo "ID de la commande " . $order->get_id() . '<br><br>';
+
+        echo "Date de creation" . $order->order_date . '<br><br>';
+
+        echo "date d'expiration" . $expirationDate . '<br><br>';
+
+        echo "current time" . date('Y-m-d H:i:s', strtotime('+5 minutes', current_time('timestamp'))) . '<br><br>';
+
+        echo "<hr>";
+
+
+        //-------------------------------------------------
+        //--------------- testing date --------------------
+
+
         //Id du client de la commande
         $order_customer_id  = $order->get_customer_id();
 
         //Date d'achat de la commande 
-        $created_date = $order->get_date_created();
+        $created_date = $order->order_date;
 
         //Conversion de la date en Unix timestamp
         $timestampConvert = strtotime($created_date);
 
         //Ajout un an à la date d'achat du produit
-        $expirationDate = date('Y-m-d', strtotime('+10 minutes', $timestampConvert));
+        $expirationDate = date('Y-m-d g:i:s', strtotime('+5 minutes', $timestampConvert));
 
         //Conversion de la date d'expiration en Unix timestamp
         $expirationTime = strtotime($expirationDate);
 
+
+        //-------------------------------------------------
+        //obtenir l'id de la commande
         $order_id = $order->get_id(); // The order_id
 
         // get an instance of the WC_Order object
@@ -94,9 +118,12 @@ function update_subscription_effix()
             //Get the product_id
             $product_id = $item->get_product_id();
         }
+        //-------------------------------------------------
+
+
 
         //Vérification de la date actuelle avec la date d'expiration
-        if ($product_id === 12 && current_time('timestamp') >= $expirationTime) {
+        if ($product_id === 10 && current_time('timestamp') >= $expirationTime) {
 
             // Fetch the WP_User object of our user.
             $get_customer_id = new WP_User($order_customer_id);
