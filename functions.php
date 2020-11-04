@@ -13,6 +13,7 @@ function effix_supports()
      add_theme_support('automatic-feed-links');
      add_theme_support('title-tag');
      add_theme_support('post-thumbnails');
+     add_theme_support('woocommerce');
      add_theme_support('menus');
      register_nav_menu('main_nav', 'Navigation');
      register_nav_menu('login_nav', 'Login');
