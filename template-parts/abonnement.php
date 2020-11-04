@@ -18,7 +18,12 @@
                <h4 class="heading-quaternary u-margin-top-small">*abonnement annuel</h4>
           </div>
           <div class="abonnement__produit--panier">
-               <a href="#" class="btn">Ajouter au panier</a>
+               <?php query_posts('cat=21');
+               if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post();
+                         echo the_content(); ?>
+               <?php endwhile;
+               endif; ?>
           </div>
      </div>
 </section>

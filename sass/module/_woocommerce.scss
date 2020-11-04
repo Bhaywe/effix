@@ -116,20 +116,12 @@
      padding: 0!important;
 }
 
-.required {
-     display: none;
-}
-
 .woocommerce-form-row {
      label {
           font-weight: 500;
           font-size: 1.8rem;
           margin-bottom: 1.3rem;
      }
-}
-
-.show-password-input {
-     display:none;
 }
 
 .woocommerce-Input {
@@ -151,4 +143,87 @@
 
 .form-row {
      margin-top: 4rem !important;
+}
+
+.summary {
+     width: 70%!important;
+     float: none!important;
+     margin: 8rem auto;
+     text-align: center;
+}
+
+.woocommerce-Tabs-panel {
+
+     p {
+          text-align: center;
+          margin: 4rem;
+          font-size: 1.8rem;
+          font-weight: 500;
+
+     }
+}
+
+.button {
+     background-color: $color-primary!important;
+     color: $color-white!important;
+     font-weight: 400!important;
+     transition: all .4s;
+
+     &:hover {
+          background-color: rgba($color-primary, .8)!important;
+     }
+}
+
+.product-thumbnail, 
+.posted_in,
+.tabs,
+.show-password-input,
+.required,
+.woocommerce-form-coupon-toggle,
+.woocommerce-additional-fields  {
+     display: none;
+}
+
+.woocommerce-billing-fields {
+     margin-bottom: 10rem;
+
+     h3 {
+          font-size: 2.3rem!important;
+          font-weight: 500!important;
+          line-height: 2.8rem!important;
+     }
+
+     &__field-wrapper {
+          label {
+               color: $color-secondary-dark;
+               font-weight: 500;
+               font-size: 1.8rem;
+          }
+
+          input,select {
+               padding: 1rem 1.5rem;
+               border-radius: $b-radius;
+               color: $color-secondary;
+               border: 1px solid $color-secondary;
+                    
+               &:focus {
+                    outline: none;
+                    border: 1px solid $color-primary;
+               }
+               &::placeholder {
+                    color: $color-secondary;
+               }
+          }
+     }
+     
+}
+
+#order_review_heading {
+     font-size: 2.3rem!important;
+     font-weight: 500!important;
+     margin-bottom: 4rem;
+}
+
+address {
+     border: none!important;
 }

@@ -530,6 +530,25 @@ a {
           align-items: center;
 }
 
+.wc-block-featured-product {
+  background-color: transparent !important;
+  color: #2646B5;
+}
+
+.wc-block-featured-product h2 {
+  display: none;
+}
+
+.wp-block-button__link {
+  border-radius: 2px !important;
+  -webkit-transition: all 0.4s !important;
+  transition: all 0.4s !important;
+}
+
+.wp-block-button__link:hover {
+  background-color: rgba(38, 70, 181, 0.8) !important;
+}
+
 .newsletter {
   height: 40rem;
 }
@@ -749,18 +768,10 @@ a {
   padding: 0 !important;
 }
 
-.required {
-  display: none;
-}
-
 .woocommerce-form-row label {
   font-weight: 500;
   font-size: 1.8rem;
   margin-bottom: 1.3rem;
-}
-
-.show-password-input {
-  display: none;
 }
 
 .woocommerce-Input {
@@ -795,5 +806,95 @@ a {
 
 .form-row {
   margin-top: 4rem !important;
+}
+
+.summary {
+  width: 70% !important;
+  float: none !important;
+  margin: 8rem auto;
+  text-align: center;
+}
+
+.woocommerce-Tabs-panel p {
+  text-align: center;
+  margin: 4rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.button {
+  background-color: #2646B5 !important;
+  color: #F5F5F6 !important;
+  font-weight: 400 !important;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.button:hover {
+  background-color: rgba(38, 70, 181, 0.8) !important;
+}
+
+.product-thumbnail,
+.posted_in,
+.tabs,
+.show-password-input,
+.required,
+.woocommerce-form-coupon-toggle,
+.woocommerce-additional-fields {
+  display: none;
+}
+
+.woocommerce-billing-fields {
+  margin-bottom: 10rem;
+}
+
+.woocommerce-billing-fields h3 {
+  font-size: 2.3rem !important;
+  font-weight: 500 !important;
+  line-height: 2.8rem !important;
+}
+
+.woocommerce-billing-fields__field-wrapper label {
+  color: #393F55;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.woocommerce-billing-fields__field-wrapper input, .woocommerce-billing-fields__field-wrapper select {
+  padding: 1rem 1.5rem;
+  border-radius: 2px;
+  color: #999DAC;
+  border: 1px solid #999DAC;
+}
+
+.woocommerce-billing-fields__field-wrapper input:focus, .woocommerce-billing-fields__field-wrapper select:focus {
+  outline: none;
+  border: 1px solid #2646B5;
+}
+
+.woocommerce-billing-fields__field-wrapper input::-webkit-input-placeholder, .woocommerce-billing-fields__field-wrapper select::-webkit-input-placeholder {
+  color: #999DAC;
+}
+
+.woocommerce-billing-fields__field-wrapper input:-ms-input-placeholder, .woocommerce-billing-fields__field-wrapper select:-ms-input-placeholder {
+  color: #999DAC;
+}
+
+.woocommerce-billing-fields__field-wrapper input::-ms-input-placeholder, .woocommerce-billing-fields__field-wrapper select::-ms-input-placeholder {
+  color: #999DAC;
+}
+
+.woocommerce-billing-fields__field-wrapper input::placeholder, .woocommerce-billing-fields__field-wrapper select::placeholder {
+  color: #999DAC;
+}
+
+#order_review_heading {
+  font-size: 2.3rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 4rem;
+}
+
+address {
+  border: none !important;
 }
 /*# sourceMappingURL=main.css.map */

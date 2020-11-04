@@ -23,9 +23,9 @@ if (!defined('ABSPATH')) {
 global $product;
 ?>
 
-<p class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?>"><?php echo $product->get_price_html(); ?></p>
 
-<div class="content-single-product">
-	<?php the_content(); ?>
+
+<div class="content-single-product u-margin-top-small">
+	<h3 class="heading-tertiary heading-tertiary--dark">200,00$</h3>
 </div>
 <span class="deco-line"></span>
