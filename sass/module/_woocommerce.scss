@@ -229,3 +229,20 @@
 address {
      border: none!important;
 }
+
+.wp-block-group {
+
+     @include responsive(tablet) { 
+          position: absolute;
+          width:  100%;
+          top: -40%;
+          right: 2.5%;
+
+          a {
+               display: inline-block;
+               width: 105%;              
+               font-size: 1.6rem;
+          }
+     }
+     
+}

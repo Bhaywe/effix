@@ -3,6 +3,10 @@
      &__content {
           justify-content: space-between;
           flex-wrap: wrap;
+
+          @include responsive(tablet) { 
+               display: block;
+          }
      }
 
      &__box {
@@ -10,6 +14,10 @@
           border: 1px solid $color-secondary;
           border-radius: 3px;
           padding: 3rem;
+
+          @include responsive(tablet) { 
+               width: 100%;
+          }
 
           a {
                font-weight: 500;
@@ -52,14 +60,25 @@
      &__thumb {
           width: 60%;
           height: 60vh;
+
+          @include responsive(tablet) { 
+               width:  100%;
+          }
+
+          @include responsive(phone) { 
+               height: 35vh;
+          }
      }
 
      &__content {
           width: 60%;
 
+          @include responsive(tablet) { 
+               width:  100%;
+          }
+
           p {
-               margin-bottom: 2rem;
+               padding-bottom: 2rem;
           }
      }
-
 }

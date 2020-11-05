@@ -8,6 +8,7 @@
      padding: 1rem 3rem;
      cursor: pointer;
      transition: all .4s;
+     outline: none;
 
      &:hover {
           background-color: rgba($color-primary, .8);

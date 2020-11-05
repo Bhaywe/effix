@@ -10,8 +10,10 @@
 </head>
 
 <body>
-
      <header class="header">
+          <div class="header__burger">
+               <span class="header__burger--span">&nbsp;</span>
+          </div>
           <div class="flex header__box container-big">
                <div class="header__logo">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-effix-dark.png" alt="Logo Effix">

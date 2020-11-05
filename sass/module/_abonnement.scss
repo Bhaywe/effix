@@ -9,5 +9,13 @@
           padding: 0 4rem;
           border-radius: $b-radius;
           border: 1px solid $color-secondary;
+
+          @include responsive(tablet) { 
+               width: 100%;
+               display: block;
+               padding: 3rem;
+               height: 22rem;
+               position: relative;
+          }
      }
 }

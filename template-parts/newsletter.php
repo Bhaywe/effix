@@ -2,10 +2,8 @@
      <div class="newsletter__box container">
           <h2 class="heading-secondary u-padding-top-big">Inscrivez-vous à notre infolettre</h2>
           <div class="newsletter__form center u-margin-top-normal">
-               <form class="form">
+               <?php echo do_shortcode('[mc4wp_form id="83"]'); ?>
 
-                    <?php echo do_shortcode('[mc4wp_form id="83"]'); ?>
-               </form>
           </div>
      </div>
 </section>
