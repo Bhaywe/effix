@@ -14,41 +14,41 @@ $activator->effix_init();
 
 
 
-// function wpb_custom_new_menu()
-// {
-//     register_nav_menu('main_nav', __('My Custom Menu'));
-// }
-// add_action('init', 'wpb_custom_new_menu');
+function wpb_custom_new_menu()
+{
+    register_nav_menu('main_nav', __('My Custom Menu'));
+}
+add_action('init', 'wpb_custom_new_menu');
 
 
-// add_action('after_setup_theme', 'effix_supports');
-// function effix_supports()
-// {
-//     add_theme_support('automatic-feed-links');
-//     add_theme_support('title-tag');
-//     add_theme_support('post-thumbnails');
-//     add_image_size('promotions', 600, 438);
-//     add_theme_support('menus');
-//     add_theme_support('woocommerce');
-//     register_nav_menu('main_nav', 'Navigation en-tête');
-//     register_nav_menu('magasin', 'Compte et panier');
+add_action('after_setup_theme', 'effix_supports');
+function effix_supports()
+{
+    add_theme_support('automatic-feed-links');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_image_size('promotions', 600, 438);
+    add_theme_support('menus');
+    add_theme_support('woocommerce');
+    register_nav_menu('main_nav', 'Navigation en-tête');
+    register_nav_menu('magasin', 'Compte et panier');
 
-//     add_theme_support(
-//         'html5',
-//         [
-//             'search-form',
-//             'comment-form',
-//             'comment-list',
-//             'gallery',
-//             'caption',
-//             'style',
-//             'script',
-//             'navigation-widgets'
-//         ]
-//     );
-// }
+    add_theme_support(
+        'html5',
+        [
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'style',
+            'script',
+            'navigation-widgets'
+        ]
+    );
+}
 
-// // Change le titre du post si l'utilisateur est connecté ou non.
+// Change le titre du post si l'utilisateur est connecté ou non.
 // add_action('init', 'afunction');
 // function afunction()
 // {
@@ -71,8 +71,8 @@ $activator->effix_init();
 // }
 
 
-// // Changer le role de customer pour subscriber
-// // lorsque le produit est acheté.
+// Changer le role de customer pour subscriber
+// lorsque le produit est acheté.
 // add_action('woocommerce_order_status_processing', 'change_role_on_purchase');
 // function change_role_on_purchase($order_id)
 // {
@@ -108,17 +108,13 @@ $activator->effix_init();
 //         $order_customer_id  = $order->get_customer_id();
 
 //         //Date d'achat de la commande 
-//         $created_date = date('Y-m-d H:i:s', $order->get_date_created()->getOffsetTimestamp());
-
-//         //Date d'achat de la commande 
-//         //return the timestamp for the WordPress time zone that’s currently set.
-//         echo date('Y-m-d H:i:s', $order->get_date_created()->getOffsetTimestamp()) . '<br>';
+//         $created_date = $order->order_date;
 
 //         //Conversion de la date en Unix timestamp
 //         $timestampConvert = strtotime($created_date);
 
 //         //Ajout un an à la date d'achat du produit
-//         $expirationDate = date('Y-m-d H:i:s', strtotime('+1 year', $timestampConvert));
+//         $expirationDate = date('Y-m-d g:i:s', strtotime('+1 year', $timestampConvert));
 
 //         //Conversion de la date d'expiration en Unix timestamp
 //         $expirationTime = strtotime($expirationDate);
@@ -162,7 +158,7 @@ $activator->effix_init();
 //         //---------------------------------------------------------
 
 //         // Date reminde pour le renouvellement une semaine avant la date d'expiration
-//         $reminder_date = date('Y-m-d H:i:s', strtotime('+1 year -7 days', $timestampConvert));
+//         $reminder_date = date('Y-m-d g:i:s', strtotime('+1 year -7 days', $timestampConvert));
 //         $reminder_time = strtotime($reminder_date); // date format unix timestamp
 
 //         $user_info = get_userdata($order_customer_id); //donné de l'utilisateur

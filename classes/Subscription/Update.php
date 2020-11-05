@@ -2,19 +2,12 @@
 
 namespace Effix\Subscription;
 
-use WP_User;
-use DateTime;
-
 class Update
 {
 
     public function __construct()
     {
-        // $this->update_subscription_effix();
-        add_action('cron_job_effix', 'update_subscription_effix');
-
-        $timestamp = new DateTime('now');
-        wp_schedule_event($timestamp, 'daily', [$this, 'update_subscription_effix']);
+        $this->update_subscription_effix();
     }
 
     /**
@@ -32,17 +25,13 @@ class Update
             $order_customer_id  = $order->get_customer_id();
 
             //Date d'achat de la commande 
-            $created_date = date('Y-m-d H:i:s', $order->get_date_created()->getOffsetTimestamp());
-
-            //Date d'achat de la commande 
-            //return the timestamp for the WordPress time zone that’s currently set.
-            echo date('Y-m-d H:i:s', $order->get_date_created()->getOffsetTimestamp()) . '<br>';
+            $created_date = $order->order_date;
 
             //Conversion de la date en Unix timestamp
             $timestampConvert = strtotime($created_date);
 
             //Ajout un an à la date d'achat du produit
-            $expirationDate = date('Y-m-d H:i:s', strtotime('+1 year', $timestampConvert));
+            $expirationDate = date('Y-m-d g:i:s', strtotime('+1 year', $timestampConvert));
 
             //Conversion de la date d'expiration en Unix timestamp
             $expirationTime = strtotime($expirationDate);
@@ -56,6 +45,9 @@ class Update
             // echo "date d'expiration" . $expirationDate . '<br><br>';
             // echo "current time" . date('Y-m-d H:i:s', strtotime('+1 year', current_time('timestamp'))) . '<br><br>';
             // echo "<hr>";
+
+            echo $order->get_created_date();
+
             //------------------- testing date ------------------------
 
             //-------------------------------------------------
@@ -86,11 +78,10 @@ class Update
             //---------------------------------------------------------
 
             // Date reminde pour le renouvellement une semaine avant la date d'expiration
-            $reminder_date = date('Y-m-d H:i:s', strtotime('+1 year -7 days', $timestampConvert));
+            $reminder_date = date('Y-m-d g:i:s', strtotime('+1 year -7 days', $timestampConvert));
             $reminder_time = strtotime($reminder_date); // date format unix timestamp
 
             $user_info = get_userdata($order_customer_id); //donné de l'utilisateur
-            $user_id = $user_info->ID;
             $user_email = $user_info->user_email; // email utilisateur
             $user_roles = $user_info->roles; // role utilisateur
             $link_site = get_site_url(); // url du site
@@ -99,9 +90,8 @@ class Update
             // var_dump($user_roles);
             // echo in_array('subscriber', $user_roles);
 
-            ###var_dump('potatoooo');
             //Envoie du courriel de renouvellement lorsqu'on atteint la date du reminder
-            if ($product_id === 10 && current_time('timestamp') >= $reminder_time && in_array('subscriber', $user_roles) && $user_id === $order_customer_id) {
+            if ($product_id === 10 && current_time('timestamp') >= $reminder_time && in_array('subscriber', $user_roles)) {
                 $to = $user_email;
                 $subject = 'Renouvellement de votre abonnement Effix';
                 $body = 'Votre abonnement Effix expirera le' . $expirationDate . 'Il vous sera possible de vous réabonner lorsque l\'expiration de celui-ci sera atteinte. Pour tout autre information veuillez nous contacter sur' . '<a href="' . $link_site . '"> Effix </a>';
