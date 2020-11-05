@@ -83,17 +83,6 @@ function change_role_on_purchase($order_id)
     }
 }
 
-
-
-// add_action('phpmailer_init', 'fix_my_email_return_path');
-
-// function fix_my_email_return_path($phpmailer)
-// {
-//     $phpmailer->Sender = $phpmailer->From;
-// }
-
-
-
 add_action('init', 'update_subscription_effix');
 function update_subscription_effix()
 {
@@ -101,7 +90,6 @@ function update_subscription_effix()
     $orders = wc_get_orders(array('numberposts' => -1));
 
     foreach ($orders as $order) {
-
         //Id du client de la commande
         $order_customer_id  = $order->get_customer_id();
 
@@ -117,14 +105,16 @@ function update_subscription_effix()
         //Conversion de la date d'expiration en Unix timestamp
         $expirationTime = strtotime($expirationDate);
 
-        //------------------- testing date ------------------------
-        echo "ID de la commande " . $order->get_id() . '<br><br>';
-        echo "Date de creation" . $order->order_date . '<br><br>';
-        echo "date d'expiration" . $expirationDate . '<br><br>';
-        echo "current time" . date('Y-m-d H:i:s', strtotime('+1 year', current_time('timestamp'))) . '<br><br>';
-        echo "<hr>";
-        //------------------- testing date ------------------------
+        // Fetch the WP_User object of our user from customer_id order
+        $get_customer_id = new WP_User($order_customer_id);
 
+        //------------------- testing date ------------------------
+        // echo "ID de la commande " . $order->get_id() . '<br><br>';
+        // echo "Date de creation" . $order->order_date . '<br><br>';
+        // echo "date d'expiration" . $expirationDate . '<br><br>';
+        // echo "current time" . date('Y-m-d H:i:s', strtotime('+1 year', current_time('timestamp'))) . '<br><br>';
+        // echo "<hr>";
+        //------------------- testing date ------------------------
 
         //-------------------------------------------------
         //obtenir l'id de la commande
@@ -140,38 +130,31 @@ function update_subscription_effix()
 
         //Vérification de la date actuelle avec la date d'expiration
         if ($product_id === 10 && current_time('timestamp') <= $expirationTime) {
-            // Fetch the WP_User object of our user from customer_id order
-            $get_customer_id = new WP_User($order_customer_id);
-
             // Replace the current role with 'customer'
             $get_customer_id->set_role('subscriber');
         } else {
-            $get_customer_id = new WP_User($order_customer_id);
             $get_customer_id->set_role('customer');
         }
-
 
         //----------- Test date expiration reminder ---------------
         // echo 'reminder: ' . $reminder_date . '<br>';
         // echo 'expiration date: ' . $expirationDate . '<br><br>';
         // echo '<hr>';
         //echo $user_email;
-        $link_site = get_site_url();
         //---------------------------------------------------------
 
-        // date reminde pour le renouvellement une semaine avant la date d'expiration
+        // Date reminde pour le renouvellement une semaine avant la date d'expiration
         $reminder_date = date('Y-m-d g:i:s', strtotime('+1 year -7 days', $timestampConvert));
-        $reminder_time = strtotime($reminder_date);
+        $reminder_time = strtotime($reminder_date); // date format unix timestamp
 
-        // information des utilisation, on vas chercher le courriel
-        $user_info = get_userdata($order_customer_id);
-        $user_email = $user_info->user_email;
-        $user_roles = $user_info->roles;
+        $user_info = get_userdata($order_customer_id); //donné de l'utilisateur
+        $user_email = $user_info->user_email; // email utilisateur
+        $user_roles = $user_info->roles; // role utilisateur
+        $link_site = get_site_url(); // url du site
 
         // var_dump($user_info);
         // var_dump($user_roles);
         // echo in_array('subscriber', $user_roles);
-
 
         //Envoie du courriel de renouvellement lorsqu'on atteint la date du reminder
         if ($product_id === 10 && current_time('timestamp') >= $reminder_time && in_array('subscriber', $user_roles)) {
@@ -180,9 +163,7 @@ function update_subscription_effix()
             $body = 'Votre abonnement Effix expirera le' . $expirationDate . 'Il vous sera possible de vous réabonner lorsque l\'expiration de celui-ci sera atteinte. Pour tout autre information veuillez nous contacter sur' . '<a href="' . $link_site . '"> Effix </a>';
             $headers = array('Content-Type: text/html; charset=UTF-8');
             wp_mail($to, $subject, $body, $headers);
-
-            $get_customer_id = new WP_User($order_customer_id);
-            $get_customer_id->set_role('customer');
         }
+        // var_dump(wp_mail($to, $subject, $body, $headers));
     }
 }
