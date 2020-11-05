@@ -165,6 +165,8 @@
 
 .button {
      background-color: $color-primary!important;
+     border-radius: $b-radius;
+     padding: 1rem 3rem!important;
      color: $color-white!important;
      font-weight: 400!important;
      transition: all .4s;

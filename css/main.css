@@ -824,6 +824,8 @@ a {
 
 .button {
   background-color: #2646B5 !important;
+  border-radius: 2px;
+  padding: 1rem 3rem !important;
   color: #F5F5F6 !important;
   font-weight: 400 !important;
   -webkit-transition: all .4s;

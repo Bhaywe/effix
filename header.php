@@ -9,7 +9,7 @@
      <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 
      <header class="header">
           <div class="flex header__box container-big">
