@@ -42,6 +42,15 @@ function contact_form()
      ));
 }
 
+add_action('widgets_init', 'newsletter_form');
+function newsletter_form()
+{
+     register_sidebar(array(
+          'name' => 'Formulaire infolettre',
+          'id' => 'newsletter-form',
+     ));
+}
+
 function woocommerce_menu()
 {
      $menu = [
