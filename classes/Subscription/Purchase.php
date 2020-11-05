@@ -2,6 +2,9 @@
 
 namespace Effix\Subscription;
 
+use WP_User;
+use WC_Order;
+
 class Purchase
 {
     public function __construct()
