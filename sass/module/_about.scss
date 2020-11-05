@@ -2,6 +2,10 @@
 
      &__content {
           width: 60%;
+
+          @include  responsive(tablet) { 
+               width: 100%;
+          }
      }
 }
 
@@ -11,6 +15,24 @@
           flex-wrap: wrap;
           justify-content: space-between;
 
+          @include  responsive(tablet) { 
+               display: block;
+          }
+
+          &--box:nth-child(even) {
+               @include  responsive(tablet) { 
+                    flex-direction: row-reverse;
+               }
+
+               img {
+
+                    @include  responsive(tablet) { 
+                         margin-left: 1.5rem;
+                         margin-right: 0;
+                    }
+               }
+          }
+
           &--box {
                width: 30%;
                margin-bottom: 7rem;
@@ -18,11 +40,24 @@
                border-radius: 3px;
                border: 1px solid $color-secondary;
 
+               @include  responsive(tablet) { 
+                    padding: 1.5rem;
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 4rem;
+               }
+
                img {
                     width: 15rem;
                     height: 15rem;
                     border-radius: 3px;
                     border: 1px solid $color-secondary;
+
+                    @include  responsive(tablet) { 
+                         width: 7.5rem;
+                         height: 7.5rem;
+                         margin-right: 1.5rem;
+                    }
                }
           }
      }

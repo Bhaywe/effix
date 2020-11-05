@@ -50,12 +50,17 @@ a {
      font-size: 2.3rem;
      font-weight: 500;
      line-height: 2.8rem;
+
+     @include  responsive(tablet) { 
+          font-size: 2.3rem;
+          line-height: 2.8rem;
+     }
 }
 
 .heading-quaternary {
      font-size: 1.8rem;
      font-weight: 500;
-     line-height: 2.2rem;
+     line-height: 2.2rem; 
 
      &--dark {
           color: inherit;

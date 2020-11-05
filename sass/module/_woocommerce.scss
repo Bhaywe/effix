@@ -2,6 +2,10 @@
      width: 90%;
      margin: 10rem auto;
 
+     @include responsive(tablet) { 
+          margin: 5.5rem auto!important;
+     }
+
      ul {
           list-style: none;
      }
@@ -53,7 +57,7 @@
                }  
                @include responsive(tablet) { 
                     margin-left: 0;
-                    margin-top: 2rem;
+                    line-height: 10rem;
                }  
 
                &:hover {
@@ -109,6 +113,11 @@
      width: 60%!important;
      margin: 10rem auto;
      float: none!important;
+
+     @include responsive(tablet) { 
+          width:  100%!important;
+          margin: 5.5rem auto;
+     }
 }
 
 .woocommerce-form {
@@ -143,6 +152,10 @@
 
 .form-row {
      margin-top: 4rem !important;
+
+     @include responsive(tablet) { 
+          margin-top: 1.5rem !important;
+     }
 }
 
 .summary {
