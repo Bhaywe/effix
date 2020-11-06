@@ -10,7 +10,7 @@ use Effix\Utilities\Menu;
 use Effix\Utilities\Scripts;
 use Effix\Utilities\Widgets;
 use Effix\Utilities\Supports;
-use Effix\Subscription\Newupdate;
+use Effix\Subscription\Update;
 
 use Effix\Meta\User;
 
@@ -18,14 +18,10 @@ class Init
 {
     public function __construct()
     {
-
-        new Newupdate();
-
+        new Update();
         new User();
         new Scripts();
         new Menu();
-
-        // new Update();
         new Title();
         new Purchase();
         new Widgets();
