@@ -1,6 +1,6 @@
 <section class="about container-big">
      <div class="about__content">
-          <h2 class="heading-secondary u-margin-bottom-normal u-margin-top-big">À propos</h2>
+          <h2 class="heading-secondary u-margin-bottom-normal u-margin-top-big">DevTroopers</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam risus metus sed dolor. Id platea tellus diam sed mi. Enim facilisis adipiscing diam integer nec nulla a turpis egestas. Ut nisl fringilla diam congue. Sollicitudin vitae tellus arcu, a, ornare laoreet ac. Nisl lorem mi volutpat quis. Odio feugiat morbi eget enim sit praesent. Eget morbi volutpat et placerat nunc, at dictum donec. Malesuada mauris id lectus tortor viverra lobortis semper sem mauris.</p>
           <p class="u-padding-top-small">Tristique vitae enim adipiscing mauris in libero. Porttitor orci amet, justo bibendum sagittis, ultricies. Sem morbi sed ut eros nisl nec eget quis ipsum. Purus fames purus tristique sit nunc. Gravida id arcu tempus interdum massa, quisque ipsum amet. Euismod morbi diam venenatis eget sed tortor varius. Maecenas nunc magna ullamcorper viverra. Integer et dictum nunc blandit nisl. Id at porttitor adipiscing lorem velit vivamus nec fringilla. Dolor ut quisque feugiat elementum. Eget id parturient parturient tellus nisl nulla. Quis in amet, malesuada nulla neque, eget convallis. Arcu sagittis massa eros volutpat at amet, nulla.</p>
      </div>
