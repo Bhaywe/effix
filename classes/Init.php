@@ -6,7 +6,6 @@ use Effix\Subscription\Purchase;
 use Effix\Subscription\Update;
 use Effix\Utilities\Title;
 
-
 class Init
 {
     public function __construct()
