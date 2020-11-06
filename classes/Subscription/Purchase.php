@@ -25,9 +25,7 @@ class Purchase
         $items = $order->get_items();
 
         foreach ($items as $item) {
-            $product_name = $item['name'];
             $product_id = $item['product_id'];
-            $product_variation_id = $item['variation_id'];
 
             if ($order->user_id > 0 && $product_id == '10') {
                 update_user_meta($order->user_id, 'paying_customer', 1);
