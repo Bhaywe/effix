@@ -6,9 +6,14 @@ class Title
 {
     public function __construct()
     {
-        $this->change_post_title();
+        add_action('init', [$this, 'change_post_title']);
     }
 
+    /**
+     * [change_post_title description]
+     * 
+     * @return  [type]  [return description]
+     */
     public function change_post_title()
     {
         $connected_title = 'Mon compte';

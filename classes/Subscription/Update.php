@@ -6,10 +6,9 @@ use WP_user;
 
 class Update
 {
-
     public function __construct()
     {
-        $this->update_subscription_effix();
+        add_action('init', [$this, 'update_subscription_effix']);
     }
 
     /**
@@ -67,15 +66,16 @@ class Update
             $user_email = $user_info->user_email; // email utilisateur
             $user_roles = $user_info->roles; // role utilisateur
             $link_site = get_site_url(); // url du site
-            $verify_role = in_array('subscriber', $user_roles);
 
             // on supprime la commande si l'utilisateur n'existe plus
-            if ($user_info == false) {
-                wp_delete_post($order_id, true);
-            }
+            // if ($user_info == false) {
+            //     wp_delete_post($order_id, true);
+            // }
 
             //Envoie du courriel de renouvellement lorsqu'on atteint la date du reminder
-            if ($product_id === 10 && current_time('timestamp') >= $reminder_time &&  $verify_role === 1) {
+
+            //CHANGE DATE FOR EXIRATTION AND DELETE ORDER
+            if ($product_id === 10 && current_time('timestamp') >= $reminder_time) {
                 $to = $user_email;
                 $subject = 'Renouvellement de votre abonnement Effix';
                 $body = 'Votre abonnement Effix expirera le' . $expirationDate . 'Il vous sera possible de vous réabonner lorsque l\'expiration de celui-ci sera atteinte. Pour tout autre information veuillez nous contacter sur' . '<a href="' . $link_site . '"> Effix </a>';
