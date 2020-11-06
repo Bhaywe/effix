@@ -63,6 +63,7 @@ class Update
             $reminder_time = strtotime($reminder_date); // date format unix timestamp
 
             $user_info = get_userdata($order_customer_id); //donné de l'utilisateur
+            $user_id = $user_info->ID;
             $user_email = $user_info->user_email; // email utilisateur
             $user_roles = $user_info->roles; // role utilisateur
             $link_site = get_site_url(); // url du site
@@ -71,6 +72,11 @@ class Update
             // if ($user_info == false) {
             //     wp_delete_post($order_id, true);
             // }
+
+
+
+
+
 
             //Envoie du courriel de renouvellement lorsqu'on atteint la date du reminder
 

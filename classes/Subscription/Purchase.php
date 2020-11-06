@@ -36,6 +36,18 @@ class Purchase
 
                 // Add role
                 $user->add_role('subscriber');
+
+                // Date d'achat de l'abonnement
+                $purchase_date = current_time('timestamp');
+
+                // // Ajout date d'achat à l'utilisateur
+                // add_user_meta($order->user_id, '_date_order_subscription', $purchase_date);
+
+                //Date d'expiration de l'abonnement
+                $format_expiration_date = date('Y-m-d H:i:s', strtotime('+1 year', $purchase_date));
+
+                //Ajout de la date d'expiration à l'ustilisateur
+                add_user_meta($order->user_id, '_expiration_date_subscription', $format_expiration_date);
             }
         }
     }
