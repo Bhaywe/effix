@@ -37,7 +37,7 @@ class Update
             $expirationTime = strtotime($expiration_date);
             $current_time = current_time('timestamp');
 
-            if ($contain_role_subscriber === true && $current_time <= $expirationTime) {
+            if ($contain_role_subscriber === true && $current_time >= $expirationTime) {
                 wp_update_user(array('ID' => $user_id, 'role' => 'customer'));
                 delete_user_meta($user_id, '_expiration_date_subscription');
 
