@@ -27,7 +27,7 @@ class Purchase
         foreach ($items as $item) {
             $product_id = $item['product_id'];
 
-            if ($order->user_id > 0 && $product_id == '10') {
+            if ($order->user_id > 0 && $product_id == '22') {
                 update_user_meta($order->user_id, 'paying_customer', 1);
                 $user = new WP_User($order->user_id);
 
