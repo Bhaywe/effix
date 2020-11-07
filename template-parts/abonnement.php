@@ -18,7 +18,7 @@
                <h4 class="heading-quaternary u-margin-top-small">*abonnement annuel</h4>
           </div>
           <div class="abonnement__produit--panier">
-               <?php query_posts('cat=21');
+               <?php query_posts('cat=20');
                if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post();
                          echo the_content(); ?>

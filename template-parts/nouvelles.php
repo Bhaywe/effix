@@ -1,7 +1,7 @@
 <section class="nouvelles container-big">
      <h1 class="heading-primary u-margin-top-big u-margin-bottom-mid">Nouvelles</h1>
      <div class="nouvelles__content flex">
-          <?php query_posts('cat=4');
+          <?php query_posts('cat=2');
           if (have_posts()) : ?>
                <?php while (have_posts()) : the_post(); ?>
                     <div class="nouvelles__box u-margin-bottom-mid">
